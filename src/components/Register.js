@@ -14,7 +14,7 @@ const Register = ({onRouteChange, loadUser}) => {
 	const onRegisterSubmit = event => {
 		event.preventDefault();
 		const register = async () => {
-			let registeredUser = await fetch('http://localhost:3001/register', {
+			let registeredUser = await fetch('https://tranquil-shore-13013.herokuapp.com/register', {
 				method: 'post',
 				headers: { 'Content-type': 'application/json'},
 				body: JSON.stringify({

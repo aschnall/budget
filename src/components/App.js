@@ -23,7 +23,7 @@ const App = () => {
 
 	//displaying any pre-existing data for the signed in user
 	const fetchExistingData = async (id) => {
-		let initialData = await fetch(`http://localhost:3001/${id}`)
+		let initialData = await fetch(`https://tranquil-shore-13013.herokuapp.com/${id}`)
 		initialData = await initialData.json();
 		checkDataExists(initialData);
 	}
@@ -31,7 +31,7 @@ const App = () => {
 
 	//fetching updated data after submitting new transaction
 	const fetchTransactions = async (amount, description, type, date) => {
-		let response = await fetch('http://localhost:3001/submit', {
+		let response = await fetch('https://tranquil-shore-13013.herokuapp.com/submit', {
 			method: 'put',
 			headers: { 'Content-type': 'application/json'},
 			body: JSON.stringify({
@@ -49,7 +49,7 @@ const App = () => {
 
 	//clearing database after hitting reset
 	const onReset = async () => {
-		await fetch('http://localhost:3001/reset', {
+		await fetch('https://tranquil-shore-13013.herokuapp.com/reset', {
 			method: 'put',
 			headers: { 'Content-type': 'application/json'},
 			body: JSON.stringify({
@@ -61,7 +61,7 @@ const App = () => {
 
 	//deleting desired transaction from databse
 	const onDelete = async (amount, description, type, date) => {
-		let newData = await fetch('http://localhost:3001/delete', {
+		let newData = await fetch('https://tranquil-shore-13013.herokuapp.com/delete', {
 			method: 'put',
 			headers: { 'Content-type': 'application/json'},
 			body: JSON.stringify({
